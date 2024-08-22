@@ -79,15 +79,18 @@ result=Organizar(A,B)
 
 function Array = Organizar(A, B)
     Array = [A,B];
-    TamanoArray= length(Array);
-    for i = 1:TamanoArray
-        element = Array(i);
-        j=i-1;
-        while j>= 1 && Array(j) > element
-            Array(j+1) = Array(j);
-            j= j-1;
+    n = length(Array);
+
+    for i = 2:n
+        key = Array(i);  
+        j = i - 1;
+
+        while j >= 1 && Array(j) > key
+            Array(j + 1) = Array(j);
+            j = j - 1;
         end
-        Array(j+1) = element;
+
+        Array(j + 1) = key;
     end
 end
 
